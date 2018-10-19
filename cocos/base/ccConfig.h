@@ -162,7 +162,7 @@ THE SOFTWARE.
  * If a device doesn't support VAO though it claims to support should add exceptions list here.
  */
 #ifndef CC_TEXTURE_ATLAS_USE_VAO
-#define CC_TEXTURE_ATLAS_USE_VAO 1
+#define CC_TEXTURE_ATLAS_USE_VAO 0
 #endif
 
 
@@ -174,7 +174,7 @@ THE SOFTWARE.
  * @since v0.99.5
  */
 #ifndef CC_USE_LA88_LABELS
-#define CC_USE_LA88_LABELS 1
+#define CC_USE_LA88_LABELS 0
 #endif
 
 /** @def CC_SPRITE_DEBUG_DRAW
@@ -303,7 +303,7 @@ THE SOFTWARE.
  */
 #ifndef CC_USE_WEBP
 #if (CC_TARGET_PLATFORM != CC_PLATFORM_WINRT)
-#define CC_USE_WEBP  1
+#define CC_USE_WEBP  0
 #endif
 #endif // CC_USE_WEBP
 
