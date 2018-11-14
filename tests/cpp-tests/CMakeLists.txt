@@ -345,7 +345,7 @@ if(ANDROID OR IOS)
          )
 endif()
 
-if(WIN32 OR MACOSX OR LINUX)
+if(WINDOWS OR MACOSX OR LINUX)
     list(APPEND GAME_HEADER
          Classes/WindowTest/WindowTest.h
          Classes/BugsTest/Bug-14327.h
@@ -475,7 +475,9 @@ if(APPLE)
         set_xcode_property(${APP_NAME} ASSETCATALOG_COMPILER_APPICON_NAME "AppIcon-${APP_NAME}")
     endif()
 elseif(WINDOWS)
-    cocos_copy_target_dll(${APP_NAME} COPY_TO ${APP_RES_DIR})
+    # "too large PDB" error often occurs in cpp-tests when using default "/Zi"
+    target_compile_options(${APP_NAME} PRIVATE /Z7)
+    cocos_copy_target_dll(${APP_NAME} COPY_TO ${APP_RES_DIR}/..)
 endif()
 
 if(LINUX OR WINDOWS)
